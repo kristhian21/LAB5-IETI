@@ -13,7 +13,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 This login send a post request to the /auth/v1 endpoint of the user service
 
-![Login](img/s1.png)
+![Login](img/login.png)
 
 ## Learn More
 
