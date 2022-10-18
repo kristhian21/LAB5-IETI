@@ -1,16 +1,23 @@
-import { Box, TextField, Button, CssBaseline, Typography, Avatar } from '@mui/material'
+import { Box, TextField, Button, CssBaseline, Typography } from '@mui/material'
 import { Container } from '@mui/system'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router'
 
 const theme = createTheme();
 
 export default function Login (){
+    // State router controls the routing
+    const router = useRouter();
+    // Controls the submit state of the form
+    const [submit, setSubmit] = useState(false);
+    // State of the form data
     const [formData, setFormData] = useState({
         email: "",
         password: ""
     });
 
+    // Handle the form changes and update the form state
     function handleChange(event){
         const {name, value, type} = event.target;
         setFormData(prevFormData => ({
@@ -19,10 +26,25 @@ export default function Login (){
         }));
     }
 
-    async function handleSubmit(event){
+    // Handle the submit event and prevent the deafult submit behavior
+    function handleSubmit(event){
         event.preventDefault();
-        console.log("Mando la informacion del formulario");
+        console.log("Form information sent:");
         console.log(formData);
+        setSubmit(true);
+    }
+
+    // Perform the login when the submit button is clicked and the form is filled
+    useEffect(() => {
+        console.log("------- Effect Ran -------")
+        if (formData.email !== "" && formData !== "") {
+            console.log("------- Perform login request -------")
+            loginRequest();
+        }
+    }, [submit])
+
+    // Send the POST request
+    async function loginRequest(){
         try{
             var response = await fetch('http://localhost:8080/v1/auth', {
                 method: 'POST',
@@ -33,10 +55,15 @@ export default function Login (){
                 body: JSON.stringify(formData)});
             var data = await response.json();
             console.log(data);
+            console.log(data.status);
+            if(data.status !== 500){
+                router.push('/home');
+            }else{
+                alert("Incorrect credentials :(");
+            }
         }catch(e){
             console.log(e.message);
         }
-        
     }
 
     return (

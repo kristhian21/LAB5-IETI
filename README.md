@@ -19,10 +19,22 @@ That POST request gets as response a JSON object that contains the access token 
 
 ![Login Token](img/login-token.png)
 
+## Home page
+
+This page makes a GET request to the task service and then display the received data
+
+![Tasks list](img/get-tasks.png)
+
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API.
 
+- [Next.js Routing Documentation](https://nextjs.org/docs/routing/introduction) - Learn about Next.js routing
+
 - [CORS Policy configuration](https://spring.io/guides/gs/rest-service-cors/) - Learn about the configuration of CORS Policy in spring boot MVC
+
+## Author
+
+- Kirsthian David Segura

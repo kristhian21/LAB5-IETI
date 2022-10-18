@@ -15,6 +15,41 @@ a {
   box-sizing: border-box;
 }
 
+.main-container{
+  background-image: url(https://i.postimg.cc/xT3rSWd2/wallhaven-xl6v7v-1920x1080.png);
+  background-size: cover; 
+}
+
+.centered-container{
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+.grid-centered-container{
+  display: grid;
+  height: 100vh;
+  padding: 4vh;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2em;
+}
+
+.grid-header{
+  grid-column: 1/4;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  height: 20vh;
+}
+
+.grid-item{
+  background-color: white;
+  border-radius: 20px;
+  color: black;
+  text-align: center;
+  padding: 10px;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
