@@ -12,7 +12,8 @@ export default function Home() {
       <Login />
       <style jsx>{`
         div {
-          background-image: url(https://i.postimg.cc/bNB1F59y/wallpaper2.png);
+          background-image: url(https://i.postimg.cc/xT3rSWd2/wallhaven-xl6v7v-1920x1080.png);
+          background-size: cover;
           display: grid;
           place-content: center;
           height: 100vh;
