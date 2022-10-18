@@ -1,7 +1,6 @@
 import { Box, TextField, Button, CssBaseline, Typography, Avatar } from '@mui/material'
 import { Container } from '@mui/system'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
 const theme = createTheme();
 
@@ -21,9 +20,6 @@ const Login = () => {
                     padding: '30px'
                 }}
                 >
-                    <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                        <LockOutlinedIcon />
-                    </Avatar>
                     <Typography component="h1" variant="h5" sx={{
                         color: 'black'
                     }}>
